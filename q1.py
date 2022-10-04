@@ -1,32 +1,19 @@
 
-# ******************************
-# Make your Code
-# ******************************
-
-
-# Requirement
-# No need to use list
-# All input values are taken one by one separatively.
-###
-i = 0
+i = 1
 even_clusters = 0
-
+cluster = False
+    
+user_input = int(input())
+num1 = user_input
 while i < 10:
     user_input = int(input())
     i += 1
-    if(i > 10):
-        break
-    num1 = user_input
-    user_input = int(input())
-    i += 1
     num2 = user_input
-    if(num1 % 2 == 0 and num2 % 2 == 0 ):
+    if(cluster == False and num1 % 2 == 0 and num2 % 2 == 0):
         even_clusters += 1
-    while num1 % 2 == 0 and num2 % 2 == 0 and i < 10:
+        cluster = True
         num1 = num2
-        user_input = int(input())
-        i += 1
-        num2 = user_input
-    num1 = num2
-
+    else:
+        cluster = False
+        num1 = num2
 print(even_clusters)
