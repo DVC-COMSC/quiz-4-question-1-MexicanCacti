@@ -11,13 +11,22 @@
 i = 0
 even_clusters = 0
 
-user_input = int(input())
-for i in range(9):
+while i < 10:
+    user_input = int(input())
+    i += 1
+    if(i > 10):
+        break
     num1 = user_input
     user_input = int(input())
+    i += 1
     num2 = user_input
-    if num1 % 2 == 0 and num2 % 2 == 0:
+    if(num1 % 2 == 0 and num2 % 2 == 0 ):
         even_clusters += 1
-    num2 = num1
+    while num1 % 2 == 0 and num2 % 2 == 0 and i < 10:
+        num1 = num2
+        user_input = int(input())
+        i += 1
+        num2 = user_input
+    num1 = num2
 
-print(f"Output: {even_clusters}")
+print(even_clusters)
